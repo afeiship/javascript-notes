@@ -3,6 +3,16 @@
 + copy 继承
 + Object.create
 
+## 核心：
++ 构造参数：
+> Animal.call(this, inName, inColor);
++ prototype上的属性，方法：
+> copy /object.create/assign/ 中间空的函数：function F(){} 再new F();
++ 新的类上的构造函数，再重新赋值：
+> Cat.prototype.constructor = Cat;
+
+
+
 ## resouces:
 + https://www.cnblogs.com/humin/p/4556820.html
 
