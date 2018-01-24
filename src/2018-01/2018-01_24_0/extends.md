@@ -3,6 +3,9 @@
 + copy 继承
 + Object.create
 
+## resouces:
++ https://www.cnblogs.com/humin/p/4556820.html
+
 ## 注意的问题：
 ```js
 // 修复 Cat.prototype.constructor
