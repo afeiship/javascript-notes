@@ -2,6 +2,10 @@ function createXHR(){
     return typeof window.XMLHttpRequest === 'undefined' ? new XMLHttpRequest(): new ActiveXObject('Microsoft.XMLHTTP');
 }
 
+// application/x-www-form-urlencoded;
+// application/json; charset=utf-8;
+// application/form-data;
+
 // async: true 同步， false: 异步
 function Ajax(method, url, async, callBacks, data) {
     var xhr = createXHR();
@@ -18,8 +22,8 @@ function Ajax(method, url, async, callBacks, data) {
             if (xhr.status == 200) {
                 callBacks(xhr.responseText);
             } else {
-                alert('出错了,Err：' + xhr.status);
+                console.error('出错了,Error' + xhr.status);
             }
         }
-    }
+    };
 }
