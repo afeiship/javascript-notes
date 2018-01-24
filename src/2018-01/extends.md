@@ -36,3 +36,8 @@ child.prototype = Object.create( Animal.prototype );
 
 Cat.prototype.constructor = Cat;
 ```
+
+## 总结：
++ prototype继承，性能最好，因为利用了js的prototype查找特性，只有一份copy
++ copy 继承，可以实现 mixin 多继承的特性，但每个实例上保存一个方法，或者属性的指针，这份copy 不大，但肯定还是有空间的开销
++ Object.create 是es5引入的，实际比new的性能还要差，但如果支持es5/6的环境，可能直接考虑用babel了，不需要采纳此方案
