@@ -6,6 +6,7 @@
 
 ## resources:
 + https://www.cnblogs.com/colima/p/5339227.html
++ http://blog.csdn.net/jazywoo123/article/details/7319007 （ajax pool）
 
 ## GET:
 ```js
