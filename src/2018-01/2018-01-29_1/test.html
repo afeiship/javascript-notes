@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ajax DEMO</title>
+</head>
+
+<body>
+<button id='btn'>
+    GET baidu
+</button>
+<script src="./ajax-get.js"></script>
+<script>
+  var el = document.getElementById('btn');
+  el.onclick = function () {
+    ajaxGET('./test.json', {data: {test: 123}}, function (resp) {
+      console.log(resp);
+    })
+  };
+</script>
+</body>
+
+</html>
