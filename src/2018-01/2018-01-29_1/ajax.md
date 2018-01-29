@@ -1,6 +1,40 @@
 # ajax
 > ajax documents.
 
+## resources:
++ http://www.cnblogs.com/chefweb/p/6039372.html
+
+## 经典的lazy-excute:
+> 两种优化，都可以提高XHR的创建效率
+
+```js
+// 利用懒执行：
+var createXHR_optimze = (function () {
+    if (window.XMLHttpRequest) {
+        return function () {
+            return new XMLHttpRequest()
+        };
+    } else {
+        return function () {
+            return new ActiveXObject('Microsoft.XMLHTTP')
+        }
+    }
+}());
+
+// 更加优化的方案,执行一次之后，才会有这个真正的create_XHR产生
+var createXHR_optimze2 = function () {
+    if (window.XMLHttpRequest) {
+        createXHR_optimze2 = function () {
+            return new XMLHttpRequest()
+        };
+    } else {
+        createXHR_optimze2 = function () {
+            return new ActiveXObject('Microsoft.XMLHTTP')
+        }
+    }
+    return createXHR_optimze2();
+};
+```
 
 ## 知识点：
 ```conf
@@ -18,7 +52,6 @@ open() 这个方法有三个参数，open("提交方式 get/post","资源的地�
 3（数据传送中）已接收部分数据，因为相应及http头不全，这时通过responseText获取部分数据会出现错误
 4（完成）数据接收完成，此时可以通过responseText获取完整的数据
 ```
-
 
 ## status 请求状态 
 ```conf
