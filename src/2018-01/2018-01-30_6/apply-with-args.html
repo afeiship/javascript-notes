@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <blockquote>
+        <h4>Apply 第二个参数只能是Array 或者是 arguments</h4>
+        <p>每个函数都有个apply方法，该方法有两个作用：</p>
+        <p>改变函数的执行上下文（第一个参数非null，undefined）</p>
+        <p>执行/调用该函数</p>
+        <p>apply方法第二个参数一般认为被实现为数组，见经典的《javascript权威指南-第五版》中章节8.6.4，145页:</p>
+        <p>"apply()方法和call()方法相似，只不过要传递给函数的参数是由数组指定的："</p>
+        <p>和641页关于Function.apply中提到args为一个数组。</p>
+        <p>//即使obj看起来已经很象一个数组了，但除了Opera正常运行，仍然欺骗不了IE6/7/8/Firefox/Chrome/Safari，看来只有IE9/Opera与众不同。 </p>
+        <p>1. 本人测试过一个object,具有0,1,2 和length，发现不行</p>
+        <p>2. new Set([1,2,3]) 也一样不行</p>
+    </blockquote>
+    <script>
+        //https://www.cnblogs.com/snandy/archive/2011/03/21/1989743.html
+        var arrLike = {
+            0: 'test0',
+            1: 'test21',
+            2: 'test3'
+        };
+
+        function fun1(a, b, c) { console.log(a, b, c) }
+
+        function fun2() {
+            //这里使用的是arguments，而arguments并非数组
+            console.log(arguments);
+            fun1.apply(null, arguments);
+        }
+
+        fun2('test', 'abc', '1234');
+    </script>
+</body>
+
+</html>
