@@ -51,6 +51,7 @@
         var url = inUrl + '?' + param(data);
 
         xhr.open('GET', url, true);
+        xhr.responseType = 'json';
         setHeaders(xhr, headers);
         xhr.onreadystatechange = function () {
             if (xhr.readyState == 4 && xhr.status == 200) {
