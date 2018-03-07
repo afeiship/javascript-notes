@@ -1,0 +1,6 @@
+# array_object
+> [] + {}
+
+
+## resouces:
++ 
