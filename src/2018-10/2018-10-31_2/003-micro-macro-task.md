@@ -37,3 +37,7 @@ new Promise(function(resolve, reject) {
     1
  */
 ```
+
+## Promise 永远不可能真正被 simulate:
+1. 因为 Promise  在JS的事件引擎中，这种队列机制，属于 micro task ， 但用 setTimeout 模拟的这个事件队列，是属于 宏任务; 
+2. 由于同一个事件循环中，微任务永远在宏任务之前执行，所以，如果出现真正的 微任何与现在的这种模拟的 Promsise 同时存在的时候，就会出现BUG
