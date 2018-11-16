@@ -73,3 +73,83 @@ function args() {
   }
 }
 ```
+
+## Generators(生成器)
+> 生成器是一个函数，它可以退出函数，稍后重新进入函数。
+
+```js
+// generator-example.js
+function* generator(){ 
+  yield 1; 
+  yield 2; 
+  yield 3; 
+}; 
+ 
+for (const g of generator()) { 
+  console.log(g); 
+}
+```
+
+## 退出迭代
+> JavaScript 提供了四种已知的终止循环执行的方法：break、continue、return 和 throw。让我们来看一个例子：
+
+```js
+const iterable = ['mini', 'mani', 'mo'];
+ 
+for (const value of iterable) {
+  console.log(value);
+  break;
+}
+ 
+// Output:
+// mini
+
+//在这个例子中，我们使用 break 关键字在一次执行后终止循环，所以只有 mini 被打印出来。
+```
+
+## 普通对象不可迭代
+for...of 循环仅适用于迭代。 而普通对象不可迭代。 我们来看一下：
+```js
+const obj = { fname: 'foo', lname: 'bar' };
+// TypeError: obj[Symbol.iterator] is not a function
+for (const value of obj) { 
+    console.log(value);
+}
+```
+
+在这里，我们定义了一个普通对象 obj ，并且当我们尝试 for...of 对其进行操作时，会报错：TypeError: obj[Symbol.iterator] is not a function。
+
+## 但带 length 的除外：
+```js
+const obj = { length: 3, 0: 'foo', 1: 'bar', 2: 'baz' };
+ 
+const array = Array.from(obj);
+for (const value of array) { 
+    console.log(value);
+}
+```
+
+
+## For…of vs For…in
+> for...in 循环将遍历对象的所有可枚举属性。
+```js
+//for-in-example.js
+Array.prototype.newArr = () => {};
+Array.prototype.anotherNewArr = () => {};
+const array = ['foo', 'bar', 'baz'];
+
+for (const value in array) { 
+  console.log(value);
+}
+// Outcome:
+// 0
+// 1
+// 2
+// newArr
+// anotherNewArr
+```
+## 不仅枚举上面的数组声明
+for...in 不仅枚举上面的数组声明，它还从构造函数的原型中查找继承的非枚举属性，在这个例子中，newArr 和 anotherNewArr 也会打印出来。
+
+
+
