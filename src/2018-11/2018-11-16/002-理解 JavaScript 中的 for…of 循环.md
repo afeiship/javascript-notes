@@ -3,11 +3,9 @@
 
 
 ## 什么是 for…of 循环
-~~~
-for...of 语句创建一个循环 来迭代 可迭代 的对象。
-在 ES6 中引入的 for...of 循环，以替代 for...in 和 forEach() ，并支持新的迭代协议。
-for...of 允许你遍历 Arrays（数组）, Strings（字符串）, Maps（映射）, Sets（集合）等可迭代的数据结构等。
-~~~
+- for...of 语句创建一个循环 来迭代 可迭代 的对象。
+- 在 ES6 中引入的 for...of 循环，以替代 for...in 和 forEach() ，并支持新的迭代协议。
+- for...of 允许你遍历 Arrays（数组）, Strings（字符串）, Maps（映射）, Sets（集合）等可迭代的数据结构等。
 
 
 ## 语法
