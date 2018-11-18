@@ -19,6 +19,9 @@
 
 ## 缺点：
 - SEO 并不友好
-- 异步请求较多
+- 异步请求较多 （并行的ajax，受浏览器并行限制；如果是网络环境不好，这种并不好）
 - 模块之间相互通信
 - 模板引擎重复渲染
+
+## 术语：
+![](https://ws1.sinaimg.cn/large/006tNbRwly1fxcc8cj3fhj31ds0nmn2k.jpg)
