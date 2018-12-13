@@ -1,0 +1,25 @@
+{
+  "name": "javascript-notes",
+  "version": "1.0.0",
+  "description": "Javascript notes.",
+  "main": "express.js",
+  "scripts": {
+    "start": "node express"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/afeiship/javascript-notes.git"
+  },
+  "keywords": [
+    "notes"
+  ],
+  "author": "afei",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/afeiship/javascript-notes/issues"
+  },
+  "homepage": "https://github.com/afeiship/javascript-notes#readme",
+  "devDependencies": {
+    "express": "^4.16.4"
+  }
+}

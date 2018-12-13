@@ -1,2 +1,11 @@
-# Created by .ignore support plugin (hsz.mobi)
+node_modules
+bower_components
+coverage
+npm-debug.log
+yarn.lock
+Gemfile.lock
+yarn-error.log
+package-lock.json
+.DS_Store
 .idea
+.vscode
