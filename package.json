@@ -21,5 +21,8 @@
   "homepage": "https://github.com/afeiship/javascript-notes#readme",
   "devDependencies": {
     "express": "^4.16.4"
+  },
+  "dependencies": {
+    "mitt": "^1.1.3"
   }
 }
