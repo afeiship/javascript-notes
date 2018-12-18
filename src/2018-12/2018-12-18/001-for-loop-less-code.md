@@ -18,10 +18,9 @@ var listeners = [
 ];
 
 // while:
-var i = 0,
-  listener;
-while ((listener = listeners[i++])) listener();
+var i = 0, fn1;
+while ((fn1 = listeners[i++])) fn1();
 
 // for:
-for (var j = 0, fn; (fn = listeners[j++]); ) fn();
+for (var j = 0, fn2; (fn2 = listeners[j++]); ) fn2();
 ```
