@@ -21,3 +21,7 @@ typeof des2
 ```
 
 <img width="500" src="https://ws4.sinaimg.cn/large/006tNc79gy1fywzhlcqe3j30kk0gwabu.jpg" />
+
+## 看看这个还有哪些方法：
+<img width="500" src="https://ws3.sinaimg.cn/large/006tNc79gy1fywzjcunjtj310u0eg446.jpg" />
+
