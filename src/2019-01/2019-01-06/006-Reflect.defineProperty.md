@@ -1,4 +1,5 @@
 # Reflect.defineProperty
+- https://www.cnblogs.com/diligenceday/p/5474126.html
 
 ## Reflect.defineProperty() 与 Object.defineProperty()
 > 两个是一样的，都是直接在一个对象上定义一个新属性，或者修改一个对象的现有属性， 并返回这个对象。唯一不同在于返回 Boolean 值。
