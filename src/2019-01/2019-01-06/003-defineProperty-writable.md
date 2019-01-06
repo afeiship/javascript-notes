@@ -7,6 +7,10 @@
 ## 默认值
 > get或set不是必须成对出现，任写其一就可以。如果不设置方法，则get和set的默认值为undefined
 
+## 兼容性：
+- 在 `ie8下只能在DOM对象上使用` ，尝试在原生的对象使用 Object.defineProperty()会报错。
+
+
 ## resouces:
 + https://segmentfault.com/a/1190000007434923
 
