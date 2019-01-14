@@ -27,9 +27,11 @@ if (typeof Object.create != 'function') {
   // Reference: http://es5.github.io/#x15.2.3.5
   Object.create = (function() {
     // To save on memory, use a shared constructor
+    // fei: 这个好理解，共享一个 Temp constructor
     function Temp() {}
 
     // make a safe reference to Object.prototype.hasOwnProperty
+    // fei: why?
     var hasOwn = Object.prototype.hasOwnProperty;
 
     return function (O) {
