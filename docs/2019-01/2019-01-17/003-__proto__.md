@@ -14,3 +14,22 @@ obj.__proto__ === Object.getPrototypeOf(obj)
 
 // Object.prototype.isPrototypeOf(obj)
 ```
+
+## polyfill:
+- https://stackoverflow.com/questions/2242518/how-can-i-see-a-javascript-objects-prototype-chain
+
+```js
+if ( typeof Object.getPrototypeOf !== "function" ) {
+  if ( typeof "test".__proto__ === "object" ) {
+    Object.getPrototypeOf = function(object){
+      return object.__proto__;
+    };
+  } else {
+    Object.getPrototypeOf = function(object){
+      // May break if the constructor has been tampered with
+      return object.constructor.prototype;
+    };
+  }
+}
+
+```
