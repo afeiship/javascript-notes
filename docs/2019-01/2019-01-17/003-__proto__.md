@@ -10,6 +10,7 @@
 ```js
 var obj = { name: 'fei' };
 obj.__proto__ === obj.constructor.prototype
+obj.__proto__ === Object.getPrototypeOf(obj)
 
 // Object.prototype.isPrototypeOf(obj)
 ```
