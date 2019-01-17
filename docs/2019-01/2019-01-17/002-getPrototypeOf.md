@@ -33,3 +33,20 @@ Object.getPrototypeOf(nilObj)
 ```
 ## 调试截图：
 <img width="500" src="https://ws2.sinaimg.cn/large/006tNc79ly1fz9iww84eej30p80jejv0.jpg" />
+
+
+## 关于 isPlainObject 的实现原理：
+```js
+// object:
+var obj = { name: 'fei'};
+var proto1 = Object.getPrototypeOf(obj)
+var proto2 = Object.getPrototypeOf(proto1)
+
+
+// other:
+var obj = [];
+var proto1 = Object.getPrototypeOf(obj)
+var proto2 = Object.getPrototypeOf(proto1)
+var proto3 = Object.getPrototypeOf(proto2)
+
+```
