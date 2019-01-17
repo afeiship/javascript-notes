@@ -19,3 +19,17 @@ console.log( 'proto === Fn.prototype? ' + (proto === Fn.prototype) );
 //判断fn的__proto__是否指向了prototype
 console.log( proto.isPrototypeOf(fn));
 ```
+
+## 可能取到的一些值：
+- 普通的 prototype 对象
+- null 值
+
+```js
+var obj = { name:'fei'};
+var nilObj = Object.create(null);
+
+Object.getPrototypeOf(obj)
+Object.getPrototypeOf(nilObj)
+```
+## 调试截图：
+<img width="500" src="https://ws2.sinaimg.cn/large/006tNc79ly1fz9iww84eej30p80jejv0.jpg" />
