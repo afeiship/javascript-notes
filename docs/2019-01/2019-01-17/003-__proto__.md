@@ -9,7 +9,8 @@
 ## example:
 ```js
 var obj = { name: 'fei' };
-obj.__proto__ === obj.constructor.prototype
+obj.__proto__ === (obj.constructor).prototype
+// （自身）
 obj.__proto__ === Object.getPrototypeOf(obj)
 
 // Object.prototype.isPrototypeOf(obj)
@@ -17,7 +18,7 @@ obj.__proto__ === Object.getPrototypeOf(obj)
 
 ## polyfill:
 - https://stackoverflow.com/questions/2242518/how-can-i-see-a-javascript-objects-prototype-chain
-
+- https://johnresig.com/blog/objectgetprototypeof/
 ```js
 if ( typeof Object.getPrototypeOf !== "function" ) {
   if ( typeof "test".__proto__ === "object" ) {
