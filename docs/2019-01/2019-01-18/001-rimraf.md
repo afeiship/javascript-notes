@@ -3,3 +3,6 @@
 
 ## 个人理解：
 > 系统间的兼容性，直接可以靠这个解决，类似于 cross-env
+
+## resource:
+- https://github.com/isaacs/rimraf
