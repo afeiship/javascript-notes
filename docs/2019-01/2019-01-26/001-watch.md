@@ -6,6 +6,12 @@
 - https://gist.github.com/eligrey/384583
 - https://medium.com/@jbmilgrom/watch-watchgroup-watchcollection-and-deep-watching-in-angularjs-6390f23508fe
 
+## object-path:
+- https://github.com/mariocasciaro/object-path
+
+## proxify
+- https://stackoverflow.com/questions/42747189/how-to-watch-complex-objects-and-their-changes-in-javascript
+- https://codeday.me/bug/20180903/238091.html
 
 ## simple implement:
 ```js
