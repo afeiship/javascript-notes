@@ -9,14 +9,17 @@ var fn2 = function(){
 }
 
 var listeners = [fn1,fn2];
-
 // 写法1：
-var listener, i = 0;
-while(listener = listeners[i++]) listener();
-
-// 写法2：
 for (var i = 0; i < listeners.length; i++) {
     var listener = listeners[i];
     listener();
 }
+
+
+// 写法2：
+var listener, i = 0;
+while(listener = listeners[i++]) listener();
+
+// 写法3：
+for(var i=0, listener; listener = listeners[i++]; listener());
 ```
