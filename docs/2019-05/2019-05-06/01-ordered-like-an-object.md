@@ -1,4 +1,6 @@
 # JS解惑-Object中的key是有序的么
+> 注意：此文观点未经过严格验证！！！！！
+
 
 ## Object的key的排序规则到底是什么样子的呢？
 
@@ -27,3 +29,4 @@ for (let key in obj) {
 
 ## resources
 - https://juejin.im/post/5cceea34f265da03474e147b
+- http://javascript.info/object#ordered-like-an-object
