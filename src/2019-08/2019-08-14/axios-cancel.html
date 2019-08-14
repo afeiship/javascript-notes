@@ -15,6 +15,10 @@
       var btnCancel = document.getElementById("btn-cancel");
       var cancelFn = null;
 
+      // 这种每次 generate 一个新的 cancelToken；
+      // 所以不会有再也无法发送的情况
+      // https://stackoverflow.com/questions/53475045/axios-cancelled-requests-cant-be-restarted
+
       btnSend.onclick = function() {
         console.log("send!");
         axios
