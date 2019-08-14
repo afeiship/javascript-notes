@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
+    <title>Axios CacnelToken</title>
+  </head>
+  <body>
+    <button id="btn-send">SendAjax</button>
+    <button id="btn-cancel">CancelToken</button>
+    <script>
+      var btnSend = document.getElementById("btn-send");
+      var btnCancel = document.getElementById("btn-cancel");
+      const CancelToken = axios.CancelToken;
+      const source = CancelToken.source();
+
+      // v>0.18
+
+      btnSend.onclick = function() {
+        console.log("send!");
+        axios
+          .request({
+            url: "https://api.github.com/users/afeiship",
+            cancelToken: source.token
+          })
+          .then(res => {
+            console.log("res:->", res.data);
+          });
+      };
+
+      btnCancel.onclick = function(params) {
+        source.cancel();
+      };
+    </script>
+  </body>
+</html>
