@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      p {
+        border: 1px solid #000;
+        margin-bottom: 10px;
+      }
+      *:empty {
+        /* display: none; */
+      }
+    </style>
+  </head>
+  <body>
+    <img id="img" src="http://himg.bdimg.com/sys/portrait/item/be10475f686d6c73db00.jpg" />
+    <canvas id="canvas"></canvas>
+    <script>
+      var imgEl = document.getElementById('img');
+      var canvas = document.getElementById('canvas');
+      var file2base64 = function(inFile) {
+        var reader = new FileReader();
+        reader.readAsDataURL(inFile);
+        return new Promise(function(resolve, reject) {
+          reader.onload = function(inEvent) {
+            resolve(inEvent.target.result);
+          };
+          reader.onerror = function(inError) {
+            reject(inError);
+          };
+        });
+      };
+
+      document.body.addEventListener('paste', function(e) {
+        const clipboardData = e.clipboardData;
+        const el = document.createElement('div');
+
+        let { items } = clipboardData;
+        let html = clipboardData.getData('text/html');
+        const excelRegChrome = /office:excel/;
+        const excelRegSafri = /^<table/;
+        console.dir('normal:', clipboardData);
+        console.dir(html);
+
+
+        // if (!excelRegChrome.test(html) && !excelRegSafri.test(html)) return;
+        // el.innerHTML = html;
+
+        // document.appendChild(el);
+
+        var reduced = [].slice.call(items,0).reduce(function(filtered, item) {
+          if (item.type === 'image/png') {
+            filtered.push(item.getAsFile());
+          }
+          return filtered;
+        }, []);
+
+        // console.log(reduced);
+
+        for (var i = 0; i < items.length; i++) {
+          console.log(items[i], items[i].type);
+          if (items[i].type === 'image/png') {
+            console.log(e.clipboardData.items[i]);
+            var pasteFile = e.clipboardData.items[i].getAsFile();
+
+            file2base64(pasteFile).then((res) => {
+              imgEl.src = res;
+            });
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
