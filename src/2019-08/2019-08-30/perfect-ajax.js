@@ -13,7 +13,7 @@ var validateAjax = function(value) {
     });
     promise.abort = function(){
        xhr.abort();
-    });
+    };
     return promise;
 }
 // Now, we can kill the validateAjax calls by calling abort on the promise:
