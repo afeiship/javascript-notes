@@ -73,3 +73,25 @@ class Scope {
  }
 }
 ```
+
+## controller
+```js
+function ControllerRegister(controllerTemplate, controllerFunction) {
+ let $scope = new Scope()
+ $paser(controllerTemplate, $scope) // 解析controller的模板，把模板中的属性全部都解析出来，并且把这些属性赋值给$scope
+ controllerFunction($scope) // 在controllerFunction内部可能又给$scope添加了一些属性，注意，不能在运行controllerFunction的时候调用$scope.$apply()
+ 
+ let properties = Object.keys($scope) // 找出$scope上的所有属性
+ // 要把$scope上的一些内置属性排除掉 
+ properties = properties.filter(item => item.indexOf('$') !== 0) // 当然，这种排除方法只能保证在用户不使用$作为属性开头的时候有用
+ 
+ properties.forEach(property => {
+  $scope.$watch(property, () => {}, true)
+ })
+ 
+ $scope.$digest()
+}
+```
+
+## resources
+- https://www.jb51.net/article/141712.htm
