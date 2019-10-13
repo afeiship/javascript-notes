@@ -76,3 +76,4 @@ var updateScopeValue = function updateScopeValue( ) {
 
 ## resources
 - https://www.cnblogs.com/linda586586/p/4645845.html
+- https://ryanclark.me/how-angularjs-implements-dirty-checking/
