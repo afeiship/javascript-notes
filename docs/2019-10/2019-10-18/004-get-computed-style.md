@@ -11,7 +11,7 @@ function getStyle(inElement,inStyleName){
     // hook styleName: float 等 styleFloat
     if(typeof window.getComputedStyle){
         var cssStyleDeclaration= window.getComputedStyle(inElement, null);
-        return cssStyleDeclaration[inStyleName];
+        return cssStyleDeclaration.getPropertyValue(inStyleName);
     }
     return inElement.currentStyle[inStyleName];
 }
