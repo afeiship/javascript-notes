@@ -13,3 +13,26 @@
 - scroll 事件需要做一些特别处理，因为这个元素通常是在 parent 上触发
 - 对于 focus/blur/input 等元素，需要用 capture 来代替，因为这些元素默认是不冒泡的
 - CSS的一个属性：pointer-events 可以解决事件代理中的一些常见问题
+
+## 防止内部元素触发事件的方法
+### 结构部分
+```html
+<button id="btn1">
+    <i class="ion ion-ios-analytics"></i>
+    <span>a button</span>
+</button>
+```
+
+### 样式部分
+```css
+#btn1 i,
+#btn1 span {
+    /* 这样可以确保点击的只是 button，i/span 等内部元素永远不会被触发 */
+    pointer-events: none;
+}
+```
+
+## 如果是 用纯 js 的方式，就用 el.contains
+- 这个方法最早产生于 ie
+- 现在标准浏览器都已经实现，并且兼容性很好
+- 这个方法有一个参数 true/false，是否包含本身
