@@ -9,6 +9,9 @@ window.getComputedStyle(document.querySelector('#one'), ':before');;
 ```js
 function getStyle(inElement,inStyleName){
     // hook styleName: float 等 styleFloat
+    // 一般浏览器： styleFloat
+    // Firefox: cssFloat
+    // 这里应该做一个行为检测
     if(typeof window.getComputedStyle){
         var cssStyleDeclaration= window.getComputedStyle(inElement, null);
         return cssStyleDeclaration.getPropertyValue(inStyleName);
