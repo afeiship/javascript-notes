@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/4.5.6/css/ionicons.min.css"
+    />
+    <style>
+      #btn1 i,
+      #btn1 span {
+        /* 这样可以确保点击的只是 button，i/span 等内部元素永远不会被触发 */
+        pointer-events: none;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="btn1">
+      <i class="ion ion-ios-analytics"></i>
+      <span>a button</span>
+    </button>
+    <script>
+      var doc = document;
+      var btn1 = doc.getElementById("btn1");
+
+      doc.addEventListener("click", inEvent => {
+        var target = inEvent.target;
+        console.log("target:", target);
+      });
+    </script>
+  </body>
+</html>
