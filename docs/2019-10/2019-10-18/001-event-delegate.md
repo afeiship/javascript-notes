@@ -44,3 +44,17 @@
 - 这个方法最早产生于 ie
 - 现在标准浏览器都已经实现，并且兼容性很好
 - 这个方法有一个参数 true/false，是否包含本身
+
+## 还可以使用 matches api 元素是否匹配这个选择器
+```js
+function determineIfElementMatches(element, selector) {
+	return element.matches(selector);
+}
+```
+## 有 class 的场景
+- 可以直接使用 classList 的 contains
+- 兼容性的场景可以使用 className 的 string 判断，记得两边加' ' + inClassName + ' ' 来构造正则，或者字符串，避免一些常见的 BUG
+
+## resources
+- https://davidwalsh.name/event-delegate
+- https://stackoverflow.com/questions/1687296/what-is-dom-event-delegation
