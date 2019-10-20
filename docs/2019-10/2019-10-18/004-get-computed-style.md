@@ -26,3 +26,4 @@ function getStyle(inElement,inStyleName){
 ## resources
 - https://stackoverflow.com/questions/29016767/getcomputedstyle-from-the-before-pseudo-element
 - https://www.runoob.com/w3cnote/window-getcomputedstyle-method.html
+- https://www.jianshu.com/p/37ecf104195a
