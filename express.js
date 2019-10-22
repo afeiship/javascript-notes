@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 const portNumber = 3000;
-const sourceDir = "src";
+const sourceDir = "/Users/feizheng/github/javascript-notes/src/2019-10/2019-10-22";
 
 app.use(express.static(sourceDir));
 
