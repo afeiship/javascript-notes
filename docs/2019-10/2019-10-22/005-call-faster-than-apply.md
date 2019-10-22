@@ -1,6 +1,13 @@
 # call faster than apply
 > 【 js 基础 】为什么 call 比 apply 快？
 
+## 我的理解
+1. call 会比 apply 快
+2. 因为 apply 最终执行会被转化为 call
+3. apply 的执行：`CreateListFromArrayLike` 会将 `array` 转为化 `ArgumentsList` 这种数据交给内部函数执行
+4. 而 call 用户传入的会直接就是 `ArgumentsList` 减少了很多转化的步骤，所以会比较快
+
+
 ```js
 // （ 代码来自 backbone ）
 var triggerEvents = function(events, args) {
