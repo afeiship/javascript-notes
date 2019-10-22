@@ -70,3 +70,10 @@ Function.prototype.apply (thisArg, argArray)
     c、将 nextArg 添加到 argList 中，作为最后一个元素。
     d、设置 index ＝ index＋1
 9、返回调用func的[[Call]]内部方法的结果，提供thisArg作为该值，argList作为参数列表
+
+## resources
+- https://tc39.es/ecma262/#sec-function.prototype.apply
+- https://www.zhihu.com/question/61088667
+- https://github.com/noneven/__/issues/6
+- https://blog.csdn.net/zhengyinhui100/article/details/7837127/
+- https://stackoverflow.com/questions/23769556/why-is-call-so-much-faster-than-apply
